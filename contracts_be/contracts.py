@@ -1,29 +1,18 @@
 from cmath import nan
-# from unicodedata import name
-# from matplotlib import projections
-# from matplotlib.pyplot import table
-import pandas as pd
 import os
 from pymongo import MongoClient, ASCENDING, DESCENDING, errors
 from datetime import date, timedelta, datetime, timezone
 from flask import Flask, jsonify, request, redirect, Response, send_file, send_from_directory
 from flask_cors import CORS
 import json
-import math
-from urllib.parse import urlparse
-from urllib. parse import parse_qs
-from flask_cors import CORS, cross_origin
-from flask import send_from_directory
-from pandas.tseries.offsets import MonthEnd
+
 from werkzeug .utils import secure_filename
 import zipfile
-import shutil
 from exchangelib import Credentials, Account, Configuration, DELEGATE, Message, Mailbox, FileAttachment, HTMLBody
 
 app = Flask(__name__)
 
 CORS(app)
-
 
 def ContractsCollection():
 
