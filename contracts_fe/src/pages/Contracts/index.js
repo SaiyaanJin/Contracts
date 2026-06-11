@@ -55,7 +55,7 @@ const DEPARTMENTS = [
   'Contracts & Services',
 ];
 
-const REGIONS = ['ERLDC', 'NLDC', 'SRLDC', 'WRLDC', 'NRLDC', 'NERLDC', 'HQ'];
+const REGIONS = ['ERLDC HQ', 'Patna SLDC', 'Bhubaneswar', 'Ranchi', 'Gangtok'];
 const STATUSES = ['Active', 'Expired', 'Draft', 'Closed', 'About to Expire'];
 
 export default function Contracts() {
@@ -436,21 +436,7 @@ export default function Contracts() {
                 ))}
               </TextField>
             </Grid>
-            <Grid item xs={12} sm={4} md={2}>
-              <TextField
-                fullWidth
-                select
-                size="small"
-                label="Region"
-                value={filters.region || ''}
-                onChange={(e) => handleFilterChange('region', e.target.value)}
-              >
-                <MenuItem value="">All Regions</MenuItem>
-                {REGIONS.map((r) => (
-                  <MenuItem key={r} value={r}>{r}</MenuItem>
-                ))}
-              </TextField>
-            </Grid>
+
           </Grid>
 
           {loading ? (
@@ -484,7 +470,6 @@ export default function Contracts() {
                       <TableCell sx={{ fontWeight: 500 }}>{c.name}</TableCell>
                       <TableCell>
                         <Typography variant="body2">{c.department}</Typography>
-                        <Typography variant="caption" color="text.secondary">{c.region}</Typography>
                       </TableCell>
                       <TableCell>{c.vendor?.name || 'N/A'}</TableCell>
                       <TableCell sx={{ fontWeight: 600 }}>₹{parseFloat(c.contract_value || 0).toLocaleString()}</TableCell>
@@ -905,7 +890,7 @@ export default function Contracts() {
                   onChange={(e) => setFormData({ ...formData, file_no: e.target.value })}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={12}>
                 <TextField
                   fullWidth
                   select
@@ -916,20 +901,6 @@ export default function Contracts() {
                 >
                   {DEPARTMENTS.map((d) => (
                     <MenuItem key={d} value={d}>{d}</MenuItem>
-                  ))}
-                </TextField>
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  fullWidth
-                  select
-                  required
-                  label="Region"
-                  value={formData.region}
-                  onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                >
-                  {REGIONS.map((r) => (
-                    <MenuItem key={r} value={r}>{r}</MenuItem>
                   ))}
                 </TextField>
               </Grid>

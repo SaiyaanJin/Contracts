@@ -47,7 +47,7 @@ export const useAuthStore = create(
 export const useUIStore = create((set) => ({
   sidebarCollapsed: false,
   mobileSidebarOpen: false,
-  theme: 'dark',
+  theme: 'light',
   notifications: [],
   unreadCount: 0,
   globalLoading: false,

@@ -278,7 +278,7 @@ def vendor_performance():
 @require_auth
 def expiry_heatmap():
     """Aggregates contract expiries across different regions for heatmap display"""
-    regions = ["ERLDC", "WRLDC", "NRLDC", "SRLDC", "NERLDC", "HQ"]
+    regions = ["ERLDC HQ", "Patna SLDC", "Bhubaneswar", "Ranchi", "Gangtok"]
     today = date.today()
     in_90 = today + timedelta(days=90)
     

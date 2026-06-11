@@ -92,7 +92,7 @@ export default function NoteSheets() {
   useEffect(() => {
     fetchNoteSheets();
     contractService.list().then((res) => {
-      setContracts(res.data?.items || []);
+      setContracts(res.data?.contracts || res.data?.items || []);
     }).catch(() => {
       setContracts([{ id: '1', name: 'Annual Maintenance Contract for IT Equipment' }]);
     });

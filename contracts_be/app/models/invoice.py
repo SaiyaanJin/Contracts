@@ -95,6 +95,13 @@ class Invoice(db.Model):
             "sdac_processed": self.sdac_processed,
             "finance_approved": self.finance_approved,
             "created_at": self.created_at.isoformat(),
+            "contract": {
+                "name": self.contract.name,
+                "contract_no": self.contract.contract_no,
+            } if self.contract else None,
+            "vendor": {
+                "name": self.vendor.name,
+            } if self.vendor else None,
         }
         if include_items:
             data["items"] = [i.to_dict() for i in self.items]

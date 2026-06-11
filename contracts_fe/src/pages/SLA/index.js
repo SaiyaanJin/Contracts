@@ -63,7 +63,7 @@ export default function SLA() {
     slaService
       .listBreaches()
       .then((res) => {
-        setBreaches(res.data?.items || []);
+        setBreaches(Array.isArray(res.data) ? res.data : (res.data?.breaches || res.data?.items || []));
       })
       .catch((err) => {
         console.error('Failed to load SLA breaches, using mock:', err);
@@ -95,7 +95,7 @@ export default function SLA() {
   useEffect(() => {
     fetchBreaches();
     contractService.list().then((res) => {
-      setContracts(res.data?.items || []);
+      setContracts(res.data?.contracts || res.data?.items || []);
     }).catch(() => {
       setContracts([{ id: '1', name: 'Annual Maintenance Contract for IT Equipment' }]);
     });

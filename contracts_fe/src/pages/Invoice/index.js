@@ -36,6 +36,12 @@ import {
 import { invoiceService, paymentService, contractService } from '../../services/contractService';
 import { useAuthStore } from '../../store';
 
+const formatAmount = (val1, val2) => {
+  const val = val1 !== undefined && val1 !== null ? val1 : (val2 !== undefined && val2 !== null ? val2 : 0);
+  const num = Number(val);
+  return isNaN(num) ? '0' : num.toLocaleString('en-IN');
+};
+
 export default function Invoices() {
   const { user } = useAuthStore();
   const [invoices, setInvoices] = useState([]);
@@ -66,7 +72,7 @@ export default function Invoices() {
     invoiceService
       .list()
       .then((res) => {
-        setInvoices(res.data?.items || []);
+        setInvoices(res.data?.invoices || res.data?.items || []);
       })
       .catch((err) => {
         console.error('Failed to load invoices, using fallback:', err);
@@ -105,7 +111,7 @@ export default function Invoices() {
   useEffect(() => {
     fetchInvoices();
     contractService.list().then((res) => {
-      setContracts(res.data?.items || []);
+      setContracts(res.data?.contracts || res.data?.items || []);
     }).catch(() => {
       setContracts([{ id: '1', name: 'Annual Maintenance Contract for IT Equipment' }]);
     });
@@ -162,7 +168,7 @@ export default function Invoices() {
   const handleOpenPay = () => {
     setPayData({
       bill_type: 'Running Bill',
-      amount: selectedInvoice.amount,
+      amount: selectedInvoice.invoice_amount ?? selectedInvoice.amount ?? 0,
       transaction_no: '',
       remarks: '',
     });
@@ -243,9 +249,9 @@ export default function Invoices() {
                     sx={{ cursor: 'pointer' }}
                   >
                     <TableCell sx={{ fontWeight: 600 }}>{inv.invoice_no}</TableCell>
-                    <TableCell sx={{ fontWeight: 500 }}>{inv.contract?.name}</TableCell>
-                    <TableCell align="right" sx={{ fontWeight: 700 }}>₹{inv.amount.toLocaleString()}</TableCell>
-                    <TableCell>{inv.submitted_date}</TableCell>
+                    <TableCell sx={{ fontWeight: 500 }}>{inv.contract?.name || 'N/A'}</TableCell>
+                    <TableCell align="right" sx={{ fontWeight: 700 }}>₹{formatAmount(inv.invoice_amount, inv.amount)}</TableCell>
+                    <TableCell>{inv.invoice_date ?? inv.submitted_date}</TableCell>
                     <TableCell>
                       <Chip label={inv.status} size="small" color={getStatusColor(inv.status)} />
                     </TableCell>
@@ -284,11 +290,11 @@ export default function Invoices() {
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <Typography variant="caption" color="text.secondary">Invoice Amount</Typography>
-                  <Typography variant="body1" sx={{ fontWeight: 700, color: 'primary.main' }}>₹{selectedInvoice.amount?.toLocaleString()}</Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 700, color: 'primary.main' }}>₹{formatAmount(selectedInvoice.invoice_amount, selectedInvoice.amount)}</Typography>
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="caption" color="text.secondary">Submission Date</Typography>
-                  <Typography variant="body2">{selectedInvoice.submitted_date}</Typography>
+                  <Typography variant="body2">{selectedInvoice.invoice_date ?? selectedInvoice.submitted_date}</Typography>
                 </Grid>
               </Grid>
 
