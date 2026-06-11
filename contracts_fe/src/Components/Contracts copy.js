@@ -152,7 +152,7 @@ function Contracts(params) {
 	// 		icon: "pi pi-times",
 	// 		command: () => {
 	// 			axios
-	// 				.post("http://10.3.200.63:5011/delete_boq?File_Name=" + pageno, {})
+	// 				.post("http://10.3.200.63:3005/delete_boq?File_Name=" + pageno, {})
 	// 				.then((response) => {
 	// 					setfile_link(["No file was Uploaded"]);
 
@@ -229,7 +229,7 @@ function Contracts(params) {
 								.then((response) => {
 									window.location = "https://sso.erldc.in:3000";
 								})
-								.catch((error) => {});
+								.catch((error) => { });
 						} else {
 							setUser_id(decoded["User"]);
 							setPage_hide(!decoded["Login"]);
@@ -303,7 +303,7 @@ function Contracts(params) {
 						}
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			setPage_hide(true);
 		}
@@ -354,10 +354,10 @@ function Contracts(params) {
 	const get_Contracts_data = () => {
 		axios
 			.post(
-				"http://10.3.200.63:5011/getcontractsData?Department=" +
-					Selected_department +
-					"&Admin=" +
-					AdminChecked,
+				"http://10.3.200.63:3005/getcontractsData?Department=" +
+				Selected_department +
+				"&Admin=" +
+				AdminChecked,
 
 				{}
 			)
@@ -400,7 +400,7 @@ function Contracts(params) {
 				settable_header(headers);
 			})
 
-			.catch((error) => {});
+			.catch((error) => { });
 	};
 
 	const showSuccess = () => {
@@ -477,7 +477,7 @@ function Contracts(params) {
 		} else {
 			const downloadFile = () => {
 				window.location.href =
-					"http://10.3.200.63:5011/download?File_Name=" + data.BOQ_File_Name;
+					"http://10.3.200.63:3005/download?File_Name=" + data.BOQ_File_Name;
 			};
 			return (
 				<Button
@@ -511,7 +511,7 @@ function Contracts(params) {
 		if (index !== -1) {
 			initial_api_data.splice(index, 1);
 			axios
-				.get("http://10.3.200.63:5011/delete", {
+				.get("http://10.3.200.63:3005/delete", {
 					headers: {
 						datas: JSON.stringify(rowData),
 					},
@@ -528,7 +528,7 @@ function Contracts(params) {
 						});
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 	};
 
@@ -722,20 +722,20 @@ function Contracts(params) {
 	const rowClassName = (data) =>
 		moment(data["Contract_End_Date"], "DD-MM-YYYY").toDate() > moment().toDate()
 			? (moment(data["Contract_End_Date"], "DD-MM-YYYY")
-					.toDate()
-					.getFullYear() -
-					moment().toDate().getFullYear()) *
-					12 +
-					(moment(data["Contract_End_Date"], "DD-MM-YYYY").toDate().getMonth() -
-						moment().toDate().getMonth()) <
-			  4
+				.toDate()
+				.getFullYear() -
+				moment().toDate().getFullYear()) *
+				12 +
+				(moment(data["Contract_End_Date"], "DD-MM-YYYY").toDate().getMonth() -
+					moment().toDate().getMonth()) <
+				4
 				? "p-abouttoexpire"
 				: "p-nonexpired"
 			: "p-expired";
 
 	const update_data = () => {
 		axios
-			.get("http://10.3.200.63:5011/Contractsupdate", {
+			.get("http://10.3.200.63:3005/Contractsupdate", {
 				headers: {
 					datas: JSON.stringify(row_edit_data),
 				},
@@ -743,7 +743,7 @@ function Contracts(params) {
 			.then((response) => {
 				get_Contracts_data();
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	};
 
 	const onGlobalFilterChange = (e) => {
@@ -795,7 +795,7 @@ function Contracts(params) {
 		final_row_data["BOQ_File_Name"] = File;
 
 		axios
-			.get("http://10.3.200.63:5011/Contractsupdate", {
+			.get("http://10.3.200.63:3005/Contractsupdate", {
 				headers: {
 					datas: JSON.stringify(final_row_data),
 				},
@@ -821,7 +821,7 @@ function Contracts(params) {
 					});
 				}
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	}
 
 	const pricetemplate = (product) => {
@@ -861,7 +861,7 @@ function Contracts(params) {
 				visible={BOQ_upload_bol}
 				style={{ width: "50vw" }}
 				onHide={() => setBOQ_upload_bol(false)}
-				// footer={inserted_footerContent}
+			// footer={inserted_footerContent}
 			>
 				<Container>
 					<Row>
@@ -876,7 +876,7 @@ function Contracts(params) {
 										previewWidth={300}
 										name="demo[]"
 										onUpload={file_name1}
-										url={"http://10.3.200.63:5011/upload?entry=" + entry_no}
+										url={"http://10.3.200.63:3005/upload?entry=" + entry_no}
 										accept="pdf/*"
 										maxFileSize={50000000}
 										// multiple
@@ -956,7 +956,7 @@ function Contracts(params) {
 												value={v3}
 												rows={1}
 												cols={40}
-												// onChange={(e) => setE_I_C(e.target.value)}
+											// onChange={(e) => setE_I_C(e.target.value)}
 											/>
 										</span>
 									</div>
@@ -965,7 +965,7 @@ function Contracts(params) {
 											<h4>Contract Type:</h4>
 											<InputText
 												value={v8}
-												// onChange={(e) => setE_I_C(e.target.value)}
+											// onChange={(e) => setE_I_C(e.target.value)}
 											/>
 										</span>
 									</div>
@@ -975,7 +975,7 @@ function Contracts(params) {
 											<InputText
 												value={v4}
 												size={10}
-												// onChange={(e) => setE_I_C(e.target.value)}
+											// onChange={(e) => setE_I_C(e.target.value)}
 											/>
 										</span>
 									</div>
@@ -986,7 +986,7 @@ function Contracts(params) {
 											<InputText
 												value={v1}
 												size={10}
-												// onChange={(e) => setE_I_C(e.target.value)}
+											// onChange={(e) => setE_I_C(e.target.value)}
 											/>
 										</span>
 									</div>

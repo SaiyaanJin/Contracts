@@ -20,6 +20,7 @@ import {
   Chip,
   Switch,
   FormControlLabel,
+  Divider,
 } from '@mui/material';
 import {
   TrendingUp,

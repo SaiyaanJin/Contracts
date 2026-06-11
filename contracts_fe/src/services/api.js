@@ -6,9 +6,9 @@ import axios from 'axios';
 const getApiBase = () => {
   const hostname = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
   if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
-    return `http://${hostname}:5011`;
+    return `http://${hostname}:3005`;
   }
-  return 'http://localhost:5011';
+  return 'http://localhost:3005';
 };
 
 const API_BASE = getApiBase();

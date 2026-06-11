@@ -58,10 +58,17 @@ export default function AppLayout({ children }) {
   useEffect(() => {
     if (user) {
       notificationService.list().then((res) => {
-        const list = res.data || [];
+        const list = Array.isArray(res.data) ? res.data : (res.data?.notifications || []);
+        const count = typeof res.data?.unread_count === 'number'
+          ? res.data.unread_count
+          : list.filter((n) => !n.is_read).length;
         setNotifications(list);
-        setUnreadCount(list.filter((n) => !n.is_read).length);
-      }).catch((err) => console.error(err));
+        setUnreadCount(count);
+      }).catch((err) => {
+        console.error(err);
+        setNotifications([]);
+        setUnreadCount(0);
+      });
     }
   }, [user, setNotifications, setUnreadCount]);
 
@@ -159,7 +166,7 @@ export default function AppLayout({ children }) {
                 )}
               </Box>
               <Divider />
-              {notifications.length === 0 ? (
+              {!Array.isArray(notifications) || notifications.length === 0 ? (
                 <MenuItem disabled sx={{ py: 2, justifyContent: 'center' }}>
                   <Typography variant="body2" color="text.secondary">No notifications</Typography>
                 </MenuItem>

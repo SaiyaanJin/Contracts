@@ -136,7 +136,7 @@ function Input(params) {
 								.then((response) => {
 									window.location = "https://sso.erldc.in:3000";
 								})
-								.catch((error) => {});
+								.catch((error) => { });
 						} else {
 							setUser_id(decoded["User"]);
 							setpage_hide(!decoded["Login"]);
@@ -191,7 +191,7 @@ function Input(params) {
 						}
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 
 			if (Person_Name && User_id && User_Department) {
 				showInfo(
@@ -261,7 +261,7 @@ function Input(params) {
 				alert(alert_val + "fields");
 			} else {
 				axios
-					.get("http://10.3.200.63:5011/contracts_insert", {
+					.get("http://10.3.200.63:3005/contracts_insert", {
 						headers: { datas: JSON.stringify(data_to_send) },
 					})
 					.then((response) => {
@@ -275,7 +275,7 @@ function Input(params) {
 							showWarn(response.data);
 						}
 					})
-					.catch((error) => {});
+					.catch((error) => { });
 			}
 		} else {
 			alert("Please fill all values");
@@ -497,7 +497,7 @@ function Input(params) {
 											previewWidth={300}
 											name="demo[]"
 											onUpload={file_name1}
-											url={"http://10.3.200.63:5011/upload?entry="+String(Entry_No)}
+											url={"http://10.3.200.63:3005/upload?entry=" + String(Entry_No)}
 											accept="pdf/*"
 											maxFileSize={50000000}
 											multiple

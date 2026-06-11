@@ -65,7 +65,7 @@ function Dashboard(params) {
 								.then((response) => {
 									window.location = "https://sso.erldc.in:3000";
 								})
-								.catch((error) => {});
+								.catch((error) => { });
 							window.location = "https://sso.erldc.in:3000";
 						} else {
 							setUser_id(decoded["User"]);
@@ -130,7 +130,7 @@ function Dashboard(params) {
 						}
 					}
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		} else {
 			setpage_hide(true);
 			params.var2("Invalid_Token");
@@ -140,13 +140,13 @@ function Dashboard(params) {
 			setcount(false);
 
 			axios
-				.get("http://10.3.200.63:5011/dashboard", {
+				.get("http://10.3.200.63:3005/dashboard", {
 					headers: { Data: Person_Name + " (" + User_id + ")" },
 				})
 				.then((response) => {
 					setdata(response.data);
 				})
-				.catch((error) => {});
+				.catch((error) => { });
 		}
 	}, [User_id, page_hide, Person_Name, Department]);
 
@@ -224,7 +224,7 @@ function Dashboard(params) {
 							removableSort
 							value={data}
 							showGridlines
-							// size="large"
+						// size="large"
 						>
 							<Column
 								style={{

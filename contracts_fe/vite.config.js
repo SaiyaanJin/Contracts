@@ -10,7 +10,7 @@ export default defineConfig({
   },
   define: {
     'process.env': {
-      REACT_APP_API_URL: 'http://localhost:5011',
+      REACT_APP_API_URL: 'http://localhost:3005',
       REACT_APP_SSO_URL: 'https://sso.erldc.in:3000',
     }
   },

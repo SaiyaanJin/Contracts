@@ -28,7 +28,7 @@ function Assets() {
 	useEffect(() => {
 		axios
 			.post(
-				"http://10.3.200.63:5011/IT_Data_assets?category=yes",
+				"http://10.3.200.63:3005/IT_Data_assets?category=yes",
 
 				{}
 			)
@@ -42,7 +42,7 @@ function Assets() {
 		let temp_headers = [];
 		axios
 			.post(
-				"http://10.3.200.63:5011/IT_Data_assets?category=no",
+				"http://10.3.200.63:3005/IT_Data_assets?category=no",
 
 				{}
 			)
@@ -112,9 +112,9 @@ function Assets() {
 				</div>
 				<Divider></Divider>
 				{Headers.length >= Asset_Category.length &&
-				Assets &&
-				Headers &&
-				ShowDataTable ? (
+					Assets &&
+					Headers &&
+					ShowDataTable ? (
 					<>
 						{" "}
 						{Asset_Category.map((cat, index) => {

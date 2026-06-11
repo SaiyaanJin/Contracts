@@ -805,7 +805,7 @@ function Input() {
 		};
 
 		axios
-			.get("http://10.3.200.63:5011/IT_contracts_insert", {
+			.get("http://10.3.200.63:3005/IT_contracts_insert", {
 				headers: { datas: JSON.stringify(data_to_send) },
 			})
 			.then((response) => {
@@ -817,7 +817,7 @@ function Input() {
 					showWarn(response.data);
 				}
 			})
-			.catch((error) => {});
+			.catch((error) => { });
 	};
 
 	const showSuccess = (variable) => {
@@ -1019,8 +1019,8 @@ function Input() {
 			)}
 
 			{Selected_department_dropdown &&
-			Selected_division_dropdown &&
-			Selected_Contracts_type_dropdown ? (
+				Selected_division_dropdown &&
+				Selected_Contracts_type_dropdown ? (
 				<>
 					<div className="card flex justify-content-center">
 						<Dialog
@@ -1068,9 +1068,9 @@ function Input() {
 				}
 			>
 				{type_dropdown &&
-				Selected_department_dropdown &&
-				Selected_division_dropdown &&
-				Selected_Contracts_type_dropdown ? (
+					Selected_department_dropdown &&
+					Selected_division_dropdown &&
+					Selected_Contracts_type_dropdown ? (
 					<>
 						<div className="card flex justify-content-center">
 							<div className="b">
@@ -1203,9 +1203,9 @@ function Input() {
 													placeholder="Preventive Maintenance Name"
 													
 													}
-													onChange={(e) => setv17(e.target.value)}
-													rows={1}
-													cols={50}
+												onChange={(e) => setv17(e.target.value)}
+												rows={1}
+												cols={50}
 												/>
 											</span>
 										</div>
@@ -1220,7 +1220,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Remarks"
-													
+
 													value={v18}
 													onChange={(e) => setv18(e.target.value)}
 													rows={1}
@@ -1265,7 +1265,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Status of Proposal"
-													
+
 													value={v26}
 													onChange={(e) => setv26(e.target.value)}
 													rows={1}
@@ -1292,7 +1292,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Item/ Work"
-													
+
 													value={v1}
 													onChange={(e) => setv1(e.target.value)}
 													rows={1}
@@ -1308,7 +1308,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Present Status of Contract"
-													
+
 													value={v3}
 													onChange={(e) => setv3(e.target.value)}
 													rows={1}
@@ -1327,7 +1327,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Contract Type"
-													
+
 													value={v4}
 													onChange={(e) => setv4(e.target.value)}
 													rows={1}
@@ -1351,7 +1351,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Specification (Link)"
-													
+
 													value={v7}
 													onChange={(e) => setv7(e.target.value)}
 													rows={1}
@@ -1388,7 +1388,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="(E-I-C)"
-													
+
 													value={v13}
 													onChange={(e) => setv13(e.target.value)}
 													rows={1}
@@ -1412,7 +1412,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Representative of E-I-C"
-													
+
 													value={v14}
 													onChange={(e) => setv14(e.target.value)}
 													rows={1}
@@ -1428,7 +1428,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Preventive Maintenance Name"
-													
+
 													value={v17}
 													onChange={(e) => setv17(e.target.value)}
 													rows={1}
@@ -1447,7 +1447,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Remarks"
-													
+
 													value={v18}
 													onChange={(e) => setv18(e.target.value)}
 													rows={1}
@@ -1612,7 +1612,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Scope of Work"
-													
+
 													value={v25}
 													onChange={(e) => setv25(e.target.value)}
 													rows={1}
@@ -1628,7 +1628,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Status of Proposal"
-													
+
 													value={v26}
 													onChange={(e) => setv26(e.target.value)}
 													rows={1}
@@ -1677,7 +1677,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Evaluation Report"
-													
+
 													value={v28}
 													onChange={(e) => setv28(e.target.value)}
 													rows={1}
@@ -1749,7 +1749,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Committee Members"
-													
+
 													value={v36}
 													onChange={(e) => setv36(e.target.value)}
 													rows={1}
@@ -1765,7 +1765,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Difficulties"
-													
+
 													value={v47}
 													onChange={(e) => setv47(e.target.value)}
 													rows={1}
@@ -1784,7 +1784,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Terms of Payment"
-													
+
 													value={v48}
 													onChange={(e) => setv48(e.target.value)}
 													rows={1}
@@ -1811,7 +1811,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Item/ Work"
-													
+
 													value={v1}
 													onChange={(e) => setv1(e.target.value)}
 													rows={1}
@@ -1827,7 +1827,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Agency"
-													
+
 													value={v2}
 													onChange={(e) => setv2(e.target.value)}
 													rows={1}
@@ -1846,7 +1846,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Present Status of Contract"
-													
+
 													value={v3}
 													onChange={(e) => setv3(e.target.value)}
 													rows={1}
@@ -1872,7 +1872,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Contract Type"
-													
+
 													value={v4}
 													onChange={(e) => setv4(e.target.value)}
 													rows={1}
@@ -1906,7 +1906,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="LOA Link"
-													
+
 													value={v6}
 													onChange={(e) => setv6(e.target.value)}
 													rows={1}
@@ -1932,7 +1932,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Specification (Link)"
-													
+
 													value={v7}
 													onChange={(e) => setv7(e.target.value)}
 													rows={1}
@@ -1969,7 +1969,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Billing Cycle"
-													
+
 													value={v12}
 													onChange={(e) => setv12(e.target.value)}
 													rows={1}
@@ -1995,7 +1995,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="(E-I-C)"
-													
+
 													value={v13}
 													onChange={(e) => setv13(e.target.value)}
 													rows={1}
@@ -2014,7 +2014,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Representative of E-I-C"
-													
+
 													value={v14}
 													onChange={(e) => setv14(e.target.value)}
 													rows={1}
@@ -2033,7 +2033,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Esclation Matrix"
-													
+
 													value={v15}
 													onChange={(e) => setv15(e.target.value)}
 													rows={1}
@@ -2079,7 +2079,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Preventive Maintenance Name"
-													
+
 													value={v17}
 													onChange={(e) => setv17(e.target.value)}
 													rows={1}
@@ -2098,7 +2098,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Remarks"
-													
+
 													value={v18}
 													onChange={(e) => setv18(e.target.value)}
 													rows={1}
@@ -2219,7 +2219,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Scope of Work"
-													
+
 													value={v25}
 													onChange={(e) => setv25(e.target.value)}
 													rows={1}
@@ -2238,7 +2238,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Status of Proposal"
-													
+
 													value={v26}
 													onChange={(e) => setv26(e.target.value)}
 													rows={1}
@@ -2284,7 +2284,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Evaluation Report"
-													
+
 													value={v28}
 													onChange={(e) => setv28(e.target.value)}
 													rows={1}
@@ -2333,7 +2333,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Extension Details"
-													
+
 													value={v30}
 													onChange={(e) => setv30(e.target.value)}
 													rows={1}
@@ -2406,7 +2406,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Commercial Evaluation Report"
-													
+
 													value={v33}
 													onChange={(e) => setv33(e.target.value)}
 													rows={1}
@@ -2422,7 +2422,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Committee Members"
-													
+
 													value={v36}
 													onChange={(e) => setv36(e.target.value)}
 													rows={1}
@@ -2441,7 +2441,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Terms of Payment"
-													
+
 													value={v48}
 													onChange={(e) => setv48(e.target.value)}
 													rows={1}
@@ -2466,7 +2466,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Payment Details (Amount & Date)"
-													
+
 													value={v49}
 													onChange={(e) => setv49(e.target.value)}
 													rows={1}
@@ -2561,7 +2561,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Item/ Work"
-													
+
 													value={v1}
 													onChange={(e) => setv1(e.target.value)}
 													rows={1}
@@ -2577,7 +2577,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Agency"
-													
+
 													value={v2}
 													onChange={(e) => setv2(e.target.value)}
 													rows={1}
@@ -2596,7 +2596,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Present Status of Contract"
-													
+
 													value={v3}
 													onChange={(e) => setv3(e.target.value)}
 													rows={1}
@@ -2622,7 +2622,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Contract Type"
-													
+
 													value={v4}
 													onChange={(e) => setv4(e.target.value)}
 													rows={1}
@@ -2656,7 +2656,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="LOA Link"
-													
+
 													value={v6}
 													onChange={(e) => setv6(e.target.value)}
 													rows={1}
@@ -2682,7 +2682,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Specification (Link)"
-													
+
 													value={v7}
 													onChange={(e) => setv7(e.target.value)}
 													rows={1}
@@ -2798,7 +2798,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Billing Cycle"
-													
+
 													value={v12}
 													onChange={(e) => setv12(e.target.value)}
 													rows={1}
@@ -2824,7 +2824,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="(E-I-C)"
-													
+
 													value={v13}
 													onChange={(e) => setv13(e.target.value)}
 													rows={1}
@@ -2843,7 +2843,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Representative of E-I-C"
-													
+
 													value={v14}
 													onChange={(e) => setv14(e.target.value)}
 													rows={1}
@@ -2862,7 +2862,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Esclation Matrix"
-													
+
 													value={v15}
 													onChange={(e) => setv15(e.target.value)}
 													rows={1}
@@ -2887,7 +2887,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Preventive Maintenance Name"
-													
+
 													value={v17}
 													onChange={(e) => setv17(e.target.value)}
 													rows={1}
@@ -2903,7 +2903,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Remarks"
-													
+
 													value={v18}
 													onChange={(e) => setv18(e.target.value)}
 													rows={1}
@@ -3024,7 +3024,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Scope of Work"
-													
+
 													value={v25}
 													onChange={(e) => setv25(e.target.value)}
 													rows={1}
@@ -3040,7 +3040,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Status of Proposal"
-													
+
 													value={v26}
 													onChange={(e) => setv26(e.target.value)}
 													rows={1}
@@ -3089,7 +3089,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Evaluation Report"
-													
+
 													value={v28}
 													onChange={(e) => setv28(e.target.value)}
 													rows={1}
@@ -3186,7 +3186,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Commercial Evaluation Report"
-													
+
 													value={v33}
 													onChange={(e) => setv33(e.target.value)}
 													rows={1}
@@ -3205,7 +3205,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Terms of Payment"
-													
+
 													value={v48}
 													onChange={(e) => setv48(e.target.value)}
 													rows={1}
@@ -3230,7 +3230,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Payment Details (Amount & Date)"
-													
+
 													value={v49}
 													onChange={(e) => setv49(e.target.value)}
 													rows={1}
@@ -3325,7 +3325,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Item/ Work"
-													
+
 													value={v1}
 													onChange={(e) => setv1(e.target.value)}
 													rows={1}
@@ -3341,7 +3341,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Agency"
-													
+
 													value={v2}
 													onChange={(e) => setv2(e.target.value)}
 													rows={1}
@@ -3360,7 +3360,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Present Status of Contract"
-													
+
 													value={v3}
 													onChange={(e) => setv3(e.target.value)}
 													rows={1}
@@ -3386,7 +3386,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Contract Type"
-													
+
 													value={v4}
 													onChange={(e) => setv4(e.target.value)}
 													rows={1}
@@ -3420,7 +3420,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="LOA Link"
-													
+
 													value={v6}
 													onChange={(e) => setv6(e.target.value)}
 													rows={1}
@@ -3446,7 +3446,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Specification (Link)"
-													
+
 													value={v7}
 													onChange={(e) => setv7(e.target.value)}
 													rows={1}
@@ -3514,7 +3514,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Billing Cycle"
-													
+
 													value={v12}
 													onChange={(e) => setv12(e.target.value)}
 													rows={1}
@@ -3533,7 +3533,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="(E-I-C)"
-													
+
 													value={v13}
 													onChange={(e) => setv13(e.target.value)}
 													rows={1}
@@ -3552,7 +3552,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Representative of E-I-C"
-													
+
 													value={v14}
 													onChange={(e) => setv14(e.target.value)}
 													rows={1}
@@ -3577,7 +3577,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Esclation Matrix"
-													
+
 													value={v15}
 													onChange={(e) => setv15(e.target.value)}
 													rows={1}
@@ -3620,7 +3620,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Preventive Maintenance Name"
-													
+
 													value={v17}
 													onChange={(e) => setv17(e.target.value)}
 													rows={1}
@@ -3645,7 +3645,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Remarks"
-													
+
 													value={v18}
 													onChange={(e) => setv18(e.target.value)}
 													rows={1}
@@ -3760,7 +3760,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Scope of Work"
-													
+
 													value={v25}
 													onChange={(e) => setv25(e.target.value)}
 													rows={1}
@@ -3786,7 +3786,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Status of Proposal"
-													
+
 													value={v26}
 													onChange={(e) => setv26(e.target.value)}
 													rows={1}
@@ -3829,7 +3829,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Evaluation Report"
-													
+
 													value={v28}
 													onChange={(e) => setv28(e.target.value)}
 													rows={1}
@@ -3875,7 +3875,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Extension Details"
-													
+
 													value={v30}
 													onChange={(e) => setv30(e.target.value)}
 													rows={1}
@@ -3945,7 +3945,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Commercial Evaluation Report"
-													
+
 													value={v33}
 													onChange={(e) => setv33(e.target.value)}
 													rows={1}
@@ -3964,7 +3964,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Committee Members"
-													
+
 													value={v36}
 													onChange={(e) => setv36(e.target.value)}
 													rows={1}
@@ -4076,7 +4076,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Post Award Extension Details"
-													
+
 													value={v44}
 													onChange={(e) => setv44(e.target.value)}
 													rows={1}
@@ -4146,7 +4146,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Difficulties"
-													
+
 													value={v47}
 													onChange={(e) => setv47(e.target.value)}
 													rows={1}
@@ -4165,7 +4165,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Terms of Payment"
-													
+
 													value={v48}
 													onChange={(e) => setv48(e.target.value)}
 													rows={1}
@@ -4190,7 +4190,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Payment Details (Amount & Date)"
-													
+
 													value={v49}
 													onChange={(e) => setv49(e.target.value)}
 													rows={1}
@@ -4310,7 +4310,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Item/ Work"
-													
+
 													value={v1}
 													onChange={(e) => setv1(e.target.value)}
 													rows={1}
@@ -4326,7 +4326,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Name of Agency"
-													
+
 													value={v2}
 													onChange={(e) => setv2(e.target.value)}
 													rows={1}
@@ -4345,7 +4345,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Present Status of Contract"
-													
+
 													value={v3}
 													onChange={(e) => setv3(e.target.value)}
 													rows={1}
@@ -4371,7 +4371,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Contract Type"
-													
+
 													value={v4}
 													onChange={(e) => setv4(e.target.value)}
 													rows={1}
@@ -4405,7 +4405,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="LOA Link"
-													
+
 													value={v6}
 													onChange={(e) => setv6(e.target.value)}
 													rows={1}
@@ -4431,7 +4431,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Specification (Link)"
-													
+
 													value={v7}
 													onChange={(e) => setv7(e.target.value)}
 													rows={1}
@@ -4547,7 +4547,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Billing Cycle"
-													
+
 													value={v12}
 													onChange={(e) => setv12(e.target.value)}
 													rows={1}
@@ -4573,7 +4573,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="(E-I-C)"
-													
+
 													value={v13}
 													onChange={(e) => setv13(e.target.value)}
 													rows={1}
@@ -4592,7 +4592,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Representative of E-I-C"
-													
+
 													value={v14}
 													onChange={(e) => setv14(e.target.value)}
 													rows={1}
@@ -4611,7 +4611,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Esclation Matrix"
-													
+
 													value={v15}
 													onChange={(e) => setv15(e.target.value)}
 													rows={1}
@@ -4657,7 +4657,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Preventive Maintenance Name"
-													
+
 													value={v17}
 													onChange={(e) => setv17(e.target.value)}
 													rows={1}
@@ -4676,7 +4676,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Remarks"
-													
+
 													value={v18}
 													onChange={(e) => setv18(e.target.value)}
 													rows={1}
@@ -4794,7 +4794,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Scope of Work"
-													
+
 													value={v25}
 													onChange={(e) => setv25(e.target.value)}
 													rows={1}
@@ -4813,7 +4813,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Status of Proposal"
-													
+
 													value={v26}
 													onChange={(e) => setv26(e.target.value)}
 													rows={1}
@@ -4859,7 +4859,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Evaluation Report"
-													
+
 													value={v28}
 													onChange={(e) => setv28(e.target.value)}
 													rows={1}
@@ -4908,7 +4908,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Extension Details"
-													
+
 													value={v30}
 													onChange={(e) => setv30(e.target.value)}
 													rows={1}
@@ -4981,7 +4981,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Commercial Evaluation Report"
-													
+
 													value={v33}
 													onChange={(e) => setv33(e.target.value)}
 													rows={1}
@@ -4997,7 +4997,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Technical Committee Members"
-													
+
 													value={v36}
 													onChange={(e) => setv36(e.target.value)}
 													rows={1}
@@ -5133,7 +5133,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Post Award Extension Details"
-													
+
 													value={v44}
 													onChange={(e) => setv44(e.target.value)}
 													rows={1}
@@ -5203,7 +5203,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Difficulties"
-													
+
 													value={v47}
 													onChange={(e) => setv47(e.target.value)}
 													rows={1}
@@ -5222,7 +5222,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Terms of Payment"
-													
+
 													value={v48}
 													onChange={(e) => setv48(e.target.value)}
 													rows={1}
@@ -5247,7 +5247,7 @@ function Input() {
 
 												<InputTextarea
 													placeholder="Payment Details (Amount & Date)"
-													
+
 													value={v49}
 													onChange={(e) => setv49(e.target.value)}
 													rows={1}
